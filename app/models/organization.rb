@@ -6,6 +6,8 @@ class Organization < ActiveRecord::Base
 
   before_validation :set_token
 
+  has_many :payments
+
   class << self
     def unique_token
       while true
