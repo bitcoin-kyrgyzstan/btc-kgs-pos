@@ -22,7 +22,7 @@ class PaymentsController < ApplicationController
   private
 
     def payment_params
-      params.require(:payment).permit :amount
+      params.require(:payment).permit :amount_in_kgs
     end
 
 end
