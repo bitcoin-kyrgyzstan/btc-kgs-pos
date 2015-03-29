@@ -1,0 +1,22 @@
+language: ruby
+cache:
+- apt
+- bundler
+bundler_args: "--without production --binstubs"
+env:
+- RAILS_ENV=test
+addons:
+  postgresql: '9.3'
+before_script:
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database btc_kg_test;' -U postgres
+script:
+- bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: YeqRbEt6RVLxZcXVef9y+eCHsoXsXB+8bB04Czu/H+kQpmXM72P2FIhDmnM7TPM80JzfVxiwu4pXZ9y9op06kDzSDoHyZBp1D81rjMTNgst+oSKvkHoIM7uqOg054X3ZQwXWOfdT8kdoLWhAdbPcaPg6VPuyeRtpJaAFSEjiHRs=
+  app: btc-kgs-pos
+  run: rake db:migrate

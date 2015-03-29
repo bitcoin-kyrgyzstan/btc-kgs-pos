@@ -1,5 +1,7 @@
 # [BTC POS service for KGS](http://btc-kgs-pos.herokuapp.com/)
 
+[![Build Status](https://travis-ci.org/bitcoin-kyrgyzstan/btc-kgs-pos.svg)](https://travis-ci.org/bitcoin-kyrgyzstan/btc-kgs-pos)
+
 ## Setup
 
 Install gems:
