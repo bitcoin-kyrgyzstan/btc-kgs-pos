@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'puma'
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
+gem 'responders', '~> 2.0'
 
 group :production do
   gem 'rails_12factor'
