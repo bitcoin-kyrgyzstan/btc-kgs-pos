@@ -16,6 +16,9 @@ class Payment < ActiveRecord::Base
     end
   end
 
+  def refresh_status_from_blockchain!
+  end
+
   private
 
     def set_luid
