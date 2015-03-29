@@ -1,0 +1,4 @@
+ru:
+  new_order: Новый платеж
+  errors:
+    unauthorized: Организация не авторизована!
