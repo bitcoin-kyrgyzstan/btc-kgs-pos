@@ -1,5 +1,4 @@
 class PaymentsController < ApplicationController
-
   before_action :authenticate_organization!
 
   def new
@@ -13,6 +12,11 @@ class PaymentsController < ApplicationController
 
   def show
     @payment = current_organization.payments.find params[:id]
+    @payment.refresh_status_from_blockchain!
+    respond_to do |format|
+      format.html
+      format.json { render payment }
+    end
   end
 
   private
