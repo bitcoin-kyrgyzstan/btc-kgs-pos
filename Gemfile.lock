@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    akchabar (0.1.1)
     arel (6.0.0)
     autoprefixer-rails (5.1.8)
       execjs
@@ -189,6 +190,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  akchabar
   bootstrap-sass
   bootstrap-sass-extras
   coffee-rails (~> 4.1.0)
