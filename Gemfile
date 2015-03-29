@@ -8,6 +8,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'puma'
+gem 'bootstrap-sass'
+gem 'bootstrap-sass-extras'
 
 group :production do
   gem 'rails_12factor'
