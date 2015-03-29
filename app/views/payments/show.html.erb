@@ -5,4 +5,30 @@
 
   <div id="qrcode" data-text="BITCOIN PAYMENT REQUEST PLACEHOLDER"></div>
 
+  <div class="statuses">
+    <div class="pending">
+      <div class="icon">
+        <div class="loader"></div>
+      </div>
+      <span class="status">Ждем подтверждения...</span>
+    </div>
+    <div class="valid_transaction_detected">
+      <div class="icon">
+        <div class="loader"></div>
+      </div>
+      <span class="status">Проверяем платеж...</span>
+    </div>
+    <div class="verified">
+      <div class="icon">
+        <%= image_tag 'success-icon.png' %>
+      </div>
+      <span class="status">Платеж подтвержден!</span>
+    </div>
+    <div class="invalid">
+      <div class="icon">
+        <%= image_tag 'delete-icon.png' %>
+      </div>
+      <span class="status">Ошибка проведения платежа!</span>
+    </div>
+  </div>
 </div>
