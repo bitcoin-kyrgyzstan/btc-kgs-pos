@@ -1,1 +1,6 @@
 <h1><%= t("new_payment") %></h1>
+
+<%= form_for @payment do |f| %>
+  <%= f.text_field :amount, placeholder: "123.45" %>
+  <%= f.submit 'OK' %>
+<% end %>
