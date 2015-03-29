@@ -1,3 +1,8 @@
-<h1>Payment #<%= @payment.id %></h1>
+<div id="payment_status_page">
+  <h1>Payment #<%= @payment.id %></h1>
 
-<p><%= @payment.amount %> сом</p>
+  <p><%= @payment.amount %> сом</p>
+
+  <div id="qrcode" data-text="BITCOIN PAYMENT REQUEST PLACEHOLDER"></div>
+
+</div>
