@@ -5,7 +5,10 @@ class Payment < ActiveRecord::Base
   validates :luid, presence:   true,
                    uniqueness: true
 
+  validates :btc_kgs_exchange_rate, presence: true
+
   before_validation :set_luid
+  before_validation :set_btc_kgs_exchange_rate, on: :create
 
   class << self
     def unique_luid
@@ -23,5 +26,9 @@ class Payment < ActiveRecord::Base
 
     def set_luid
       self.luid ||= self.class.unique_luid
+    end
+
+    def set_btc_kgs_exchange_rate
+      self.btc_kgs_exchange_rate = CurrencyExchanger.btc_rate
     end
 end
