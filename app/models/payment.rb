@@ -10,6 +10,10 @@ class Payment < ActiveRecord::Base
   before_validation :set_luid
   before_validation :set_btc_kgs_exchange_rate, on: :create
 
+  def amount_in_btc
+    CurrencyExchanger.new(amount_in_kgs).in_btc(btc_kgs_exchange_rate)
+  end
+
   class << self
     def unique_luid
       while true
