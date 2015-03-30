@@ -14,6 +14,10 @@ class Payment < ActiveRecord::Base
     CurrencyExchanger.new(amount_in_kgs).in_btc(btc_kgs_exchange_rate)
   end
 
+  def amount_in_btc_with_identifier
+    AmountAsIdentifier.new(amount_in_btc, luid).encode
+  end
+
   class << self
     def unique_luid
       while true
