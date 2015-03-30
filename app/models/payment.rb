@@ -22,6 +22,8 @@ class Payment < ActiveRecord::Base
     def unique_luid
       while true
         luid = rand(9999)
+
+        # TODO: search by luid only within pending payments
         return luid if find_by(luid: luid).nil?
       end
     end
