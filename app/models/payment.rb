@@ -18,6 +18,11 @@ class Payment < ActiveRecord::Base
     AmountAsIdentifier.new(amount_in_btc, luid).encode
   end
 
+  def payment_request
+    PaymentRequestGenerator.new(organization.bitcoin_address,
+                                amount_in_btc_with_identifier).run
+  end
+
   class << self
     def unique_luid
       while true
